@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NakoList</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--text:#D6D6D6;--muted:#666;--accent:#E0FFFF;--line:#1a1a1a;--hover:#111;--link:#FFD700}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:14px;-webkit-font-smoothing:antialiased}
+.container{max-width:720px;margin:0 auto;padding:0 24px}
+header{padding:24px 0 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline}
+h1{font-size:16px;font-weight:400;letter-spacing:0.02em;color:var(--accent)}
+.contact-trigger{color:var(--accent);font-size:13px;cursor:pointer;padding:4px 0;position:relative}
+.contact-popup{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,10,.95);display:none;z-index:100;padding-top:100px}
+.contact-popup.active{display:block}
+.contact-content{width:100%;max-width:720px;margin:0 auto;padding:24px;font-size:13px;line-height:2.2;color:var(--accent)}
+.contact-content a{color:var(--accent);text-decoration:underline;text-decoration-color:var(--link)}
+.contact-close{position:absolute;top:20px;right:24px;color:var(--muted);font-size:24px;cursor:pointer}
+.domain-list{list-style:none;padding:8px 0}
+.domain-item{border-bottom:1px solid var(--line)}
+.domain-header{display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;cursor:pointer;gap:16px}
+.domain-main{flex:1;min-width:0}
+.domain-name{font-family:SF Mono,Monaco,monospace;font-size:14px;color:#fff;letter-spacing:-0.01em}
+.domain-intro{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.5}
+.domain-price{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;flex-shrink:0}
+.expand-icon{width:8px;height:8px;position:relative;flex-shrink:0;transition:transform .3s}
+.expand-icon::before,.expand-icon::after{content:"";position:absolute;background:var(--accent)}
+.expand-icon::before{width:1.5px;height:8px;left:3.25px;top:0}
+.expand-icon::after{width:8px;height:1.5px;left:0;top:3.25px}
+.domain-item.active .expand-icon{transform:rotate(45deg)}
+.domain-detail{display:none;padding:0 0 16px;font-size:13px;line-height:1.7;color:var(--muted)}
+.domain-item.active .domain-detail{display:block}
+.detail-content p{margin-bottom:10px}
+.detail-content strong{color:var(--text);font-weight:500}
+.detail-content em{color:#777}
+.detail-content code{font-family:SF Mono,monospace;background:#151515;padding:2px 5px;border-radius:2px;font-size:12px;color:var(--accent)}
+.detail-content a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+.detail-content a:hover{border-bottom-color:var(--accent)}
+footer{padding:16px 0 24px;text-align:center}
+.powered{font-size:11px;color:var(--muted)}
+.powered a{color:var(--text);text-decoration:underline;text-decoration-color:var(--text)}
+.powered a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>NakoList</h1>
+<span class="contact-trigger" onclick="toggleContact()">Contact</span>
+</header>
+<div class="contact-popup" id="contactPopup">
+<span class="contact-close" onclick="toggleContact()">×</span>
+<div class="contact-content" id="contact"></div>
+</div>
+<ul class="domain-list" id="list"></ul>
+<footer><div class="powered">Powered by <a href="https://github.com/mouhuan-creator/nakolist">NAKOLIST</a></div></footer>
+</div>
+<script>
+const domains=[{name:"example.com",price:"¥12,000",intro:"Example",detail:"适合各种用途，助力项目快速落地。"}];
+const contact=`Email: [i@example.com](mailto:i@example.com)
+Telegram: [@username](https://t.me/username)
+WeChat: [wxid_xxx](weixin://)
+Mastodon: [@user@mastodon.social](https://mastodon.social/@user)`;
+const list=document.getElementById('list');
+const contactDiv=document.getElementById('contact');
+const popup=document.getElementById('contactPopup');
+domains.forEach((d,i)=>{const li=document.createElement('li');li.className='domain-item';li.innerHTML=`<div class="domain-header" onclick="this.parentElement.classList.toggle('active')"><div class="domain-main"><div class="domain-name">${d.name}</div><div class="domain-intro">${d.intro}</div></div><span class="domain-price">${d.price}</span><span class="expand-icon"></span></div><div class="domain-detail"><div class="detail-content">${fmt(d.detail)}</div></div>`;list.appendChild(li);});
+contactDiv.innerHTML=fmt(contact);
+function toggleContact(){popup.classList.toggle('active');}
+function fmt(t){return t.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>').replace(/`(.*?)`/g,'<code>$1</code>').replace(/\[(.*?)\]\((.*?)\)/g,'<a href="$2">$1</a>').replace(/\n/g,'<br>');}
+document.addEventListener('click',function(e){if(!e.target.closest('.contact-trigger')&&!e.target.closest('.contact-popup')&&popup.classList.contains('active')){popup.classList.remove('active');}});
+</script>
+</body>
+</html>
