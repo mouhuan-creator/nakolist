@@ -47,10 +47,11 @@ Mastodon: [@user@mastodon.social](https://mastodon.social/@user)`;
 
 ＊颜色（`:root`后面部分）
 >　`--bg`	背景	`#0a0a0a`	
-`--text`	正文	`#D6D6D6`	
-`--muted`	价格/简介	`#666`	
-`--accent`	标题/Contact/图标	`#E0FFFF`	
-`--link`	下划线	`#FFD700`
+> `--text`	正文	`#D6D6D6`	
+> `--muted`	价格/简介	`#666`	
+> `--accent`	标题/Contact/图标
+> `#E0FFFF`	
+> `--link`	下划线	`#FFD700`
 
 ＊域名需单独修改
 >　.domain-name{color:#fff}
