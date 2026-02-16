@@ -24,9 +24,7 @@
 目前有两种部署方式：Github Pages 和　Cloudflare Pages。
 您也可以下载源码至本地，并部署到您的服务器上。
 
-###　Github Pages
-1. Fork此仓库，并命名为`username.github.io`
-2. 修改`index.html`，替换如下参数：
+修改`index.html`，替换如下参数：
 
 ＊页面标题
 <h1>替换成你的标题</h1>
