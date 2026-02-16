@@ -20,8 +20,8 @@
 - 多语言缺失，仅中文界面，国际化不便。
 - 无主题切换按钮，部分情况下可能视觉效果差。
 
-## 部署：
-目前有两种部署方式：Github Pages 和　Cloudflare Pages。
+## 使用方法：
+目前有两种零成本部署方式：Github Pages 和　Cloudflare Pages。
 您也可以下载源码至本地，并部署到您的服务器上。
 
 修改`index.html`，替换如下参数：
