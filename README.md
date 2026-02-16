@@ -1,5 +1,5 @@
 # NAKOLIST
-－－－开源轻量个人域名米表／导航页。
+开源轻量个人域名米表／导航页。
 快速体验：[nakolist.pages.dev](https://nakolist.pages.dev)
 
 ## 特点：
