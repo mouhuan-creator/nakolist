@@ -24,13 +24,13 @@
 ];
 //最后一个不用加,
 
-3.Contact
+3.　Contact
 >　const contact=`Email: [xx@xx.xx](mailto:xx@xx.xx)
 Telegram: [@username](https://t.me/username)
 WeChat: [wxid](weixin://)
 Mastodon: [@user@mastodon.social](https://mastodon.social/@user)`;
 
-4.末尾的 Powered by部分，建议保留此版权说明
+4.　末尾的 Powered by部分，建议保留此版权说明
 >　Powered by <a href="https://https://github.com/mouhuan-creator/nakolist">NAKOLIST</a>
 
 5. 颜色（`:root`后部分，填入你喜欢的颜色的色值）
