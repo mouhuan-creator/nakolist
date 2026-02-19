@@ -1,7 +1,9 @@
 # NAKOLIST
-极简个人域名米表／导航页
-快速查看效果（cloudflare版）：[nakolist.yami.eu.org](https://nakolist.yami.eu.org)
+极简个人域名米表／导航页  
 
+快速查看效果：[nakolist.yami.eu.org](https://nakolist.yami.eu.org)（部署于Cloudflare Pages）
+
+一个实例：[34567888.xyz](https://www.34567888.xyz/)（本人米表，部署在Github Pages)
 ## 特点：
 - 单 HTML　静态文件，大小不足5KB，可轻松部署至　Github Pages或Cloudflare Pages。
 - 极简设计，无繁杂CSS，加载快，滑动顺畅。
@@ -44,7 +46,7 @@ Mastodon: [@user@mastodon.social](https://mastodon.social/@user)`;
 6.域名颜色需单独设置
 >　.domain-name{color:#fff}
 
-7.不清楚的话拿去喂给AI，反正就只是个单页。
+7.不清楚的话可以拿去问AI，反正只是单页 HTML
 
 
 
