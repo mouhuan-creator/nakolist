@@ -1,6 +1,6 @@
 # NAKOLIST
 极简个人域名米表／导航页
-快速查看效果（cloudflare版）：[nakolist.pages.dev](https://nakolist.pages.dev)
+快速查看效果（cloudflare版）：[nakolist.yami.eu.org](https://nakolist.yami.eu.org)
 
 ## 特点：
 - 单 HTML　静态文件，大小不足5KB，可轻松部署至　Github Pages或Cloudflare Pages。
