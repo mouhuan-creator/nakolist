@@ -82,15 +82,11 @@ h1 { font-size: 16px; font-weight: 400; letter-spacing: .02em; color: var(--acce
 .domain-price { font-size: 12px; color: var(--muted); flex-shrink: 0; }
 
 .expand-icon {
-  width: 16px; height: 16px; position: relative; flex-shrink: 0;
+  font-size: 12px; color: var(--muted); flex-shrink: 0;
   transition: transform .35s ease;
+  line-height: 1;
 }
-.expand-icon::before, .expand-icon::after {
-  content: ""; position: absolute; background: var(--accent); border-radius: 1px;
-}
-.expand-icon::before { width: 2px; height: 10px; left: 7px; top: 3px; }
-.expand-icon::after  { width: 10px; height: 2px; left: 3px; top: 7px; }
-.domain-item.active .expand-icon { transform: rotate(135deg); }
+.domain-item.active .expand-icon { transform: rotate(90deg); }
 
 /* Detail */
 .domain-detail {
@@ -243,7 +239,7 @@ const list = document.getElementById('list');
 domains.forEach(d => {
   const el = document.createElement('div');
   el.className = 'domain-item';
-  el.innerHTML = `<div class="domain-header"><div class="domain-main"><div class="domain-name">${d.name}</div><div class="domain-intro">${d.intro}</div></div><span class="domain-price">${d.price}</span><span class="expand-icon"></span></div><div class="domain-detail"><div><div class="detail-content">${fmt(d.detail)}</div></div></div>`;
+  el.innerHTML = `<div class="domain-header"><div class="domain-main"><div class="domain-name">${d.name}</div><div class="domain-intro">${d.intro}</div></div><span class="domain-price">${d.price}</span><span class="expand-icon">▶</span></div><div class="domain-detail"><div><div class="detail-content">${fmt(d.detail)}</div></div></div>`;
   list.appendChild(el);
 });
 
