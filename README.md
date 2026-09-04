@@ -1,6 +1,4 @@
-# NAKOLIST V2.0
+# NAKOLIST V3.0
 极简个人域名列表。  
 
-2026/06/17，更新至 v2.1
-
-一个实例：[www.34567888.xyz](https://www.34567888.xyz/)
+见 https://github.com/mouhuan-creator/nakos
